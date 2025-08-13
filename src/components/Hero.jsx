@@ -84,7 +84,7 @@ const Hero = () => {
                   CONTINUE READING →
                   <span className="sr-only"> about Akande Samuel's projects</span>
                 </a>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="newspaper-btn newspaper-btn--secondary">
+                <a href="https://drive.google.com/file/d/1EKvVJg4lVDwFIX-wWnDBqWOawnrWPNNw/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="newspaper-btn newspaper-btn--secondary">
                   FULL BIOGRAPHY ↓
                   <span className="sr-only"> (opens in new tab)</span>
                 </a>

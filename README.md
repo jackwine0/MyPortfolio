@@ -1,12 +1,20 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+**📰 The Daily Developer — Newspaper-Style Portfolio**
+A unique, newspaper-themed developer portfolio showcasing my projects, skills, and contact information. Built with React and styled to mimic the feel of classic print media, complete with masthead, fold lines, and vintage typography.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Features**
 
-## Expanding the ESLint configuration
+* 📜 Newspaper-inspired layout & typography
+* 📂 Project showcase with images & descriptions
+* 🖋 About section in editorial style
+* 📞 Contact form styled like classified ads
+* 📱 Fully responsive & mobile-friendly design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Tech Stack**
+
+* React + Vite
+* CSS (custom newspaper theme)
+* Responsive design with media queries
+
+

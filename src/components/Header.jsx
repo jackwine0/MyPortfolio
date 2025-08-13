@@ -82,7 +82,7 @@ const Header = () => {
             ))}
           </div>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1EKvVJg4lVDwFIX-wWnDBqWOawnrWPNNw/view?usp=sharing"
             className="newspaper-nav__cta"
             target="_blank"
             rel="noopener noreferrer"

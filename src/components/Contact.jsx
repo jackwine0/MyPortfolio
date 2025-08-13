@@ -51,7 +51,7 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { name: "GITHUB", url: "#" },
+    { name: "GITHUB", url: "https://github.com/jackwine0" },
     { name: "LINKEDIN", url: "#" },
     { name: "TWITTER", url: "#" }
   ];

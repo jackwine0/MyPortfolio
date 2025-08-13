@@ -49,7 +49,7 @@ const Footer = () => {
     { label: "Front Page", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Classifieds", href: "#contact" },
-    { label: "Full Archive", href: "/resume.pdf", external: true }
+    { label: "Full Archive", href: "https://drive.google.com/file/d/1EKvVJg4lVDwFIX-wWnDBqWOawnrWPNNw/view?usp=sharing", external: true }
   ];
 
   return (
