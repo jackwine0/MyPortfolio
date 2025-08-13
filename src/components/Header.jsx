@@ -82,7 +82,7 @@ const Header = () => {
             ))}
           </div>
           <a
-            href="https://drive.google.com/file/d/1EKvVJg4lVDwFIX-wWnDBqWOawnrWPNNw/view?usp=sharing"
+            href="https://docs.google.com/document/d/1ET5xg6jlWvnxJa6-Iq57TnyWF6juU_q81vYdDMI_aaA/edit?usp=sharing"
             className="newspaper-nav__cta"
             target="_blank"
             rel="noopener noreferrer"

@@ -49,7 +49,7 @@ const Footer = () => {
     { label: "Front Page", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Classifieds", href: "#contact" },
-    { label: "Full Archive", href: "https://drive.google.com/file/d/1EKvVJg4lVDwFIX-wWnDBqWOawnrWPNNw/view?usp=sharing", external: true }
+    { label: "Full Archive", href: "https://docs.google.com/document/d/1ET5xg6jlWvnxJa6-Iq57TnyWF6juU_q81vYdDMI_aaA/edit?usp=sharing", external: true }
   ];
 
   return (
