@@ -1,0 +1,262 @@
+/* ================================
+   CSS VARIABLES & RESET
+================================ */
+:root {
+  --color-black: #111;
+  --color-white: #fff;
+  --color-gray: #666;
+  --color-light-gray: #ddd;
+  --color-dark-gray: #444;
+  --color-accent: #aaa;
+  --max-width: 1200px;
+  --font-serif: 'Times New Roman', Times, serif;
+  --font-heading: 'Old English Text MT', var(--font-serif);
+  --gap: 1.5rem;
+  --border: 1px solid var(--color-dark-gray);
+  --border-thick: 3px double var(--color-dark-gray);
+  --shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+}
+
+/* ================================
+   BASE PROJECTS STYLES
+================================ */
+.newspaper-projects {
+  background-color: var(--color-white);
+  padding: 2rem 1rem;
+  font-family: var(--font-serif);
+  color: var(--color-black);
+  border-bottom: var(--border-thick);
+}
+
+.newspaper-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ================================
+   SECTION HEADER STYLES
+================================ */
+.newspaper-section-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.newspaper-section-title {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+.section-kicker {
+  display: block;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-gray);
+}
+
+.section-headline {
+  display: block;
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+.section-subhead {
+  font-style: italic;
+  color: var(--color-gray);
+  margin-top: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.newspaper-divider {
+  height: 1px;
+  background-color: var(--color-black);
+  width: 100px;
+  margin: 1rem auto;
+}
+
+/* ================================
+   GRID LAYOUT
+================================ */
+.newspaper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 900px) {
+  .newspaper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.newspaper-card {
+  border: var(--border);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform var(--transition);
+}
+
+.newspaper-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ================================
+   CARD STYLES
+================================ */
+.card-header {
+  margin-bottom: 0.5rem;
+}
+
+.card-date {
+  font-size: 0.7rem;
+  color: var(--color-gray);
+  font-style: italic;
+}
+
+.card-title {
+  font-size: clamp(1.1rem, 3vw, 1.2rem);
+  font-weight: 700;
+  margin: 0.2rem 0;
+  line-height: 1.3;
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: var(--border);
+  filter: grayscale(100%) contrast(110%);
+  margin: 0.5rem 0;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-description {
+  font-size: clamp(0.85rem, 2vw, 0.9rem);
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  flex: 1;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.tech-tag {
+  background-color: var(--color-light-gray);
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  border: var(--border);
+  border-radius: 2px;
+}
+
+.card-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  border-top: var(--border);
+  padding-top: 0.5rem;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: 0.8rem;
+  border-bottom: var(--border);
+  padding-bottom: 0.1rem;
+  transition: color var(--transition);
+}
+
+.card-link:hover,
+.card-link:focus-visible {
+  color: var(--color-gray);
+  outline: none;
+}
+
+/* ================================
+   PAGINATION STYLES
+================================ */
+.newspaper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: var(--border);
+}
+
+.pagination-button {
+  background: none;
+  border: var(--border);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition);
+}
+
+.pagination-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination-button:not(:disabled):hover,
+.pagination-button:not(:disabled):focus-visible {
+  background-color: var(--color-light-gray);
+  outline: none;
+}
+
+.page-indicator {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+}
+
+/* ================================
+   ACCESSIBILITY UTILITIES
+================================ */
+@media (prefers-reduced-motion: reduce) {
+  .newspaper-card {
+    transition: none;
+  }
+}
+
+/* ================================
+   PRINT STYLES
+================================ */
+@media print {
+  .newspaper-projects {
+    break-inside: avoid;
+    border-bottom: var(--border-thick);
+  }
+  
+  .newspaper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .card-links {
+    display: none;
+  }
+  
+  .card-image {
+    filter: none;
+  }
+}

@@ -1,0 +1,326 @@
+/* ================================
+   CSS VARIABLES & RESET
+================================ */
+:root {
+  --color-black: #111;
+  --color-white: #fff;
+  --color-gray: #666;
+  --color-light-gray: #ddd;
+  --color-dark-gray: #444;
+  --color-accent: #aaa;
+  --header-height: 80px;
+  --header-height-mobile: 70px;
+  --font-serif: 'Times New Roman', Times, serif;
+  --font-heading: 'Old English Text MT', var(--font-serif);
+  --transition: 0.3s ease;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   BASE HEADER STYLES
+================================ */
+.newspaper-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-white);
+  border-bottom: 3px double var(--color-black);
+  font-family: var(--font-serif);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  height: var(--header-height);
+}
+
+.newspaper-header.scrolled {
+  height: calc(var(--header-height) - 10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.newspaper-header__container {
+  max-width: min(1000px, 90%);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* ================================
+   MASTHEAD STYLES
+================================ */
+.newspaper-masthead {
+  display: flex;
+  flex-direction: column;
+}
+
+.newspaper-logo {
+  text-decoration: none;
+  color: var(--color-black);
+  transition: transform var(--transition);
+}
+
+.newspaper-logo:hover {
+  transform: translateY(-1px);
+}
+
+.newspaper-name {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  display: block;
+  line-height: 1;
+  font-family: var(--font-heading);
+}
+
+.newspaper-tagline {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-top: 0.2rem;
+  border-top: 1px solid var(--color-black);
+  padding-top: 0.2rem;
+  color: var(--color-gray);
+}
+
+/* ================================
+   NAVIGATION STYLES
+================================ */
+.newspaper-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.newspaper-nav__sections {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.newspaper-nav__link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.newspaper-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-black);
+  transition: width var(--transition);
+}
+
+.newspaper-nav__link:hover::after,
+.newspaper-nav__link:focus-visible::after {
+  width: 100%;
+}
+
+.nav-section {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  border-bottom: 1px solid var(--color-black);
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.1rem;
+  transition: color var(--transition);
+}
+
+.nav-label {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--color-black);
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.newspaper-nav__link:hover .nav-section,
+.newspaper-nav__link:hover .nav-label,
+.newspaper-nav__link:focus-visible .nav-section,
+.newspaper-nav__link:focus-visible .nav-label {
+  color: var(--color-black);
+}
+
+/* ================================
+   CALL-TO-ACTION BUTTON
+================================ */
+.newspaper-nav__cta {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.4rem 0.9rem;
+  text-align: center;
+  border: 1px solid var(--color-black);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.newspaper-nav__cta:hover,
+.newspaper-nav__cta:focus-visible {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  outline: none;
+}
+
+.cta-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-text {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* ================================
+   MOBILE MENU BUTTON
+================================ */
+.newspaper-menu-btn {
+  --button-size: 28px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--button-size);
+  height: calc(var(--button-size) - 4px);
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-line {
+  height: 2px;
+  background-color: var(--color-black);
+  transition: all var(--transition);
+  transform-origin: center;
+}
+
+.menu-label {
+  position: absolute;
+  bottom: -15px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  color: var(--color-black);
+  transition: opacity var(--transition);
+}
+
+.newspaper-menu-btn.active .menu-label {
+  opacity: 0;
+}
+
+/* Menu animation */
+.newspaper-menu-btn.active .menu-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.newspaper-menu-btn.active .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.newspaper-menu-btn.active .menu-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ================================
+   MOBILE NAVIGATION
+================================ */
+@media (max-width: 768px) {
+  .newspaper-header {
+    height: var(--header-height-mobile);
+  }
+  
+  .newspaper-header.scrolled {
+    height: calc(var(--header-height-mobile) - 8px);
+  }
+
+  .newspaper-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(80%, 280px);
+    height: 100vh;
+    flex-direction: column;
+    background: var(--color-white);
+    padding: 5rem 1.5rem 2rem;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right var(--transition);
+    overflow-y: auto;
+  }
+
+  .newspaper-nav.open {
+    right: 0;
+  }
+
+  .newspaper-nav__sections {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .newspaper-nav__link {
+    border-bottom: 1px solid var(--color-light-gray);
+    padding-bottom: 1rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .newspaper-menu-btn {
+    display: flex;
+  }
+
+  .newspaper-nav__cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ================================
+   ACCESSIBILITY IMPROVEMENTS
+================================ */
+.newspaper-logo:focus-visible,
+.newspaper-nav__link:focus-visible,
+.newspaper-nav__cta:focus-visible,
+.newspaper-menu-btn:focus-visible {
+  outline: 2px dashed var(--color-black);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newspaper-header,
+  .newspaper-nav__link::after,
+  .menu-line {
+    transition: none !important;
+  }
+}
+
+/* ================================
+   PRINT STYLES
+================================ */
+@media print {
+  .newspaper-header {
+    position: static;
+    box-shadow: none;
+    border-bottom: 3px double var(--color-black);
+  }
+  
+  .newspaper-menu-btn,
+  .newspaper-nav {
+    display: none !important;
+  }
+}

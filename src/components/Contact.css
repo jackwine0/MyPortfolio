@@ -1,0 +1,378 @@
+/* ================================
+   CSS VARIABLES & RESET
+================================ */
+:root {
+  --color-black: #1a1a1a;
+  --color-white: #fff;
+  --color-gray: #666;
+  --color-light-gray: #f0f0f0;
+  --color-border: #ddd;
+  --color-primary: #000;
+  --color-primary-hover: #333;
+  --max-width: 1000px;
+  --font-serif: 'Times New Roman', Times, serif;
+  --font-heading: var(--font-serif);
+  --gap: 2rem;
+  --border: 1px solid var(--color-border);
+  --border-thick: 3px double var(--color-black);
+  --transition: 0.3s ease;
+  --animation-delay: 0.2s;
+}
+
+/* ================================
+   BASE CONTACT STYLES
+================================ */
+.np-contact {
+  background-color: var(--color-white);
+  padding: 2rem 1rem;
+  font-family: var(--font-serif);
+  color: var(--color-black);
+  border-bottom: var(--border-thick);
+  position: relative;
+}
+
+.np-contact__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ================================
+   SECTION HEADER STYLES
+================================ */
+.np-contact__header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.np-contact__title {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+.np-contact__kicker {
+  display: block;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-gray);
+}
+
+.np-contact__headline {
+  display: block;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+.np-contact__subhead {
+  font-style: italic;
+  color: var(--color-gray);
+  margin-top: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.np-contact__divider {
+  height: 1px;
+  background-color: var(--color-black);
+  width: 100px;
+  margin: 1rem auto;
+}
+
+/* ================================
+   COLUMN LAYOUT
+================================ */
+.np-contact__columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .np-contact__columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ================================
+   CONTACT INFO COLUMN
+================================ */
+.np-contact__info-col {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity var(--transition), transform var(--transition);
+  will-change: opacity, transform;
+}
+
+.np-contact__info-col--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.np-contact__info-block {
+  margin-bottom: 2rem;
+}
+
+.np-contact__info-heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border-bottom: var(--border);
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.np-contact__info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity var(--transition), transform var(--transition);
+  will-change: opacity, transform;
+}
+
+.np-contact__info-item--delay-1 {
+  transition-delay: calc(1 * var(--animation-delay));
+}
+
+.np-contact__info-item--delay-2 {
+  transition-delay: calc(2 * var(--animation-delay));
+}
+
+.np-contact__info-item--delay-3 {
+  transition-delay: calc(3 * var(--animation-delay));
+}
+
+.np-contact__info-col--visible .np-contact__info-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.np-contact__info-icon {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  flex-shrink: 0;
+}
+
+.np-contact__info-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.2rem;
+}
+
+.np-contact__info-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.np-contact__info-value:hover,
+.np-contact__info-value:focus {
+  color: var(--color-gray);
+  text-decoration: underline;
+}
+
+/* ================================
+   SOCIAL LINKS
+================================ */
+.np-contact__social {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity var(--transition), transform var(--transition);
+  transition-delay: calc(4 * var(--animation-delay));
+  will-change: opacity, transform;
+}
+
+.np-contact__social--delay-4 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.np-contact__social-heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border-bottom: var(--border);
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.np-contact__social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.np-contact__social-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-light-gray);
+  color: var(--color-black);
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: var(--border);
+  transition: all var(--transition);
+}
+
+.np-contact__social-btn:hover,
+.np-contact__social-btn:focus {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  outline: none;
+}
+
+/* ================================
+   CONTACT FORM COLUMN
+================================ */
+.np-contact__form-col {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity var(--transition), transform var(--transition);
+  will-change: opacity, transform;
+}
+
+.np-contact__form-col--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+.np-contact__form-group {
+  margin-bottom: 1.5rem;
+}
+
+.np-contact__form-label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray);
+}
+
+
+
+.np-contact__form-input:focus,
+.np-contact__form-textarea:focus {
+  border-color: var(--color-black);
+  outline: none;
+}
+
+.np-contact__form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.np-contact__form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.np-contact__form-submit:hover,
+.np-contact__form-submit:focus {
+  background-color: var(--color-primary-hover);
+  outline: none;
+}
+
+.np-contact__submit-icon {
+  font-size: 1.2rem;
+}
+
+/* ================================
+   ACCESSIBILITY UTILITIES
+================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-contact__info-col,
+  .np-contact__form-col,
+  .np-contact__info-item,
+  .np-contact__social {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ================================
+   PRINT STYLES
+================================ */
+@media print {
+  .np-contact {
+    break-inside: avoid;
+    border-bottom: var(--border-thick);
+  }
+  
+  .np-contact__social-buttons {
+    display: none;
+  }
+  
+  .np-contact__form {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .np-contact__form-submit {
+    display: none;
+  }
+}
+
+/* Apply border-box universally to avoid overflow issues */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Fix for inputs & textarea overflowing */
+.np-contact__form-input,
+.np-contact__form-textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.8rem;
+  border: var(--border);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  background-color: var(--color-white);
+  transition: border-color var(--transition);
+  box-sizing: border-box; /* <-- important fix */
+}
+
+/* Make sure the form doesn't overflow its container */
+.np-contact__form {
+  background-color: var(--color-light-gray);
+  padding: 1.5rem;
+  border: var(--border);
+  overflow-x: hidden; /* prevents small overflows */
+}

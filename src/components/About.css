@@ -1,0 +1,241 @@
+/* ================================
+   CSS VARIABLES & RESET
+================================ */
+:root {
+  --color-black: #111;
+  --color-white: #fff;
+  --color-gray: #666;
+  --color-light-gray: #ddd;
+  --color-dark-gray: #444;
+  --color-accent: #aaa;
+  --max-width: 1000px;
+  --font-serif: 'Times New Roman', Times, serif;
+  --font-heading: 'Old English Text MT', var(--font-serif);
+  --gap: 2rem;
+  --border: 1px solid var(--color-dark-gray);
+  --border-thick: 3px double var(--color-dark-gray);
+  --border-dashed: 1px dashed var(--color-dark-gray);
+  --transition: 0.3s ease;
+}
+
+/* ================================
+   BASE ABOUT STYLES
+================================ */
+.newspaper-about {
+  background-color: var(--color-white);
+  padding: 2rem 1rem;
+  font-family: var(--font-serif);
+  color: var(--color-black);
+  border-bottom: var(--border-thick);
+}
+
+.newspaper-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ================================
+   SECTION HEADER STYLES
+================================ */
+.newspaper-section-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.newspaper-section-title {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+.section-kicker {
+  display: block;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-gray);
+}
+
+.section-headline {
+  display: block;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+.newspaper-divider {
+  height: 1px;
+  background-color: var(--color-black);
+  width: 100px;
+  margin: 1rem auto;
+}
+
+/* ================================
+   COLUMN LAYOUT
+================================ */
+.newspaper-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .newspaper-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.newspaper-column {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.newspaper-lead {
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.drop-cap {
+  float: left;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  line-height: 0.8;
+  padding-top: 0.2rem;
+  padding-right: 0.5rem;
+  font-weight: bold;
+}
+
+/* ================================
+   CLASSIFIEDS SECTION
+================================ */
+.newspaper-classifieds {
+  border: var(--border-thick);
+  padding: 1.5rem;
+  margin-bottom: var(--gap);
+}
+
+.classifieds-header {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  border-bottom: var(--border);
+  padding-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: var(--color-black);
+}
+
+.classifieds-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.classified-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 0.5rem;
+  border: var(--border-dashed);
+  transition: all var(--transition);
+}
+
+.classified-item:hover {
+  background-color: var(--color-light-gray);
+}
+
+.classified-icon {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  flex-shrink: 0;
+}
+
+/* ================================
+   BULLETIN SECTION
+================================ */
+.newspaper-bulletin {
+  background-color: var(--color-light-gray);
+  padding: 1.5rem;
+  border: var(--border);
+}
+
+.bulletin-header {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  border-bottom: var(--border);
+  padding-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: var(--color-black);
+}
+
+.bulletin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.bulletin-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  text-align: center;
+  padding: 0.5rem;
+  transition: all var(--transition);
+}
+
+.bulletin-item:hover {
+  transform: translateY(-2px);
+}
+
+.bulletin-icon {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  flex-shrink: 0;
+}
+
+/* ================================
+   ACCESSIBILITY UTILITIES
+================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classified-item,
+  .bulletin-item {
+    transition: none;
+  }
+}
+
+/* ================================
+   PRINT STYLES
+================================ */
+@media print {
+  .newspaper-about {
+    break-inside: avoid;
+    border-bottom: var(--border-thick);
+  }
+  
+  .classifieds-grid,
+  .bulletin-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .newspaper-bulletin {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,271 @@
+/* ================================
+   CSS VARIABLES & RESET
+================================ */
+:root {
+  --color-black: #111;
+  --color-white: #fff;
+  --color-gray: #666;
+  --color-light-gray: #ddd;
+  --color-dark-gray: #444;
+  --color-accent: #aaa;
+  --max-width: 1200px;
+  --font-serif: 'Times New Roman', Times, serif;
+  --font-heading: 'Old English Text MT', var(--font-serif);
+  --gap: 2rem;
+  --border: 1px solid var(--color-dark-gray);
+  --border-thick: 3px double var(--color-dark-gray);
+  --transition: 0.3s ease;
+}
+
+/* ================================
+   BASE HERO STYLES
+================================ */
+.newspaper-hero {
+  background-color: var(--color-white);
+  padding: 2rem 1rem;
+  font-family: var(--font-serif);
+  color: var(--color-black);
+  border-bottom: var(--border-thick);
+}
+
+.newspaper-hero__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition), transform var(--transition);
+  will-change: opacity, transform;
+}
+
+.newspaper-hero__container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================================
+   HEADLINE STYLES
+================================ */
+.newspaper-headline {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: var(--border);
+  padding-bottom: 1rem;
+}
+
+.newspaper-date-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray);
+}
+
+.newspaper-price {
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.newspaper-main-headline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-black);
+}
+
+.headline-kicker {
+  display: block;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray);
+}
+
+.headline-main {
+  display: block;
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.headline-sub {
+  display: block;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-style: italic;
+  color: var(--color-gray);
+}
+
+/* ================================
+   BYLINE STYLES
+================================ */
+.newspaper-byline {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  margin-bottom: 1.5rem;
+  color: var(--color-gray);
+}
+
+.byline::before {
+  content: "By ";
+}
+
+.dateline {
+  font-weight: bold;
+}
+
+/* ================================
+   COLUMN LAYOUT
+================================ */
+.newspaper-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+  .newspaper-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.newspaper-column {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--color-black);
+}
+
+.newspaper-lead {
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.drop-cap {
+  float: left;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  line-height: 0.8;
+  padding-top: 0.2rem;
+  padding-right: 0.5rem;
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+/* ================================
+   CALL TO ACTION STYLES
+================================ */
+.newspaper-cta {
+  margin-top: 2rem;
+}
+
+.newspaper-box {
+  border: var(--border-thick);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.box-heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  border-bottom: var(--border);
+  padding-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+  color: var(--color-black);
+}
+
+.box-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.box-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.newspaper-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .newspaper-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.newspaper-btn {
+  display: block;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: var(--border);
+  transition: all var(--transition);
+}
+
+.newspaper-btn--primary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.newspaper-btn--primary:hover,
+.newspaper-btn--primary:focus-visible {
+  background-color: var(--color-white);
+    color: var(--color-black);
+  outline: none;
+}
+
+.newspaper-btn--secondary {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.newspaper-btn--secondary:hover,
+.newspaper-btn--secondary:focus-visible {
+  background-color: var(--color-light-gray);
+  outline: none;
+}
+
+/* ================================
+   ACCESSIBILITY UTILITIES
+================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newspaper-hero__container {
+    transition: none;
+  }
+}
+
+/* ================================
+   PRINT STYLES
+================================ */
+@media print {
+  .newspaper-hero {
+    break-after: avoid;
+    border-bottom: var(--border-thick);
+  }
+  
+  .newspaper-btn {
+    display: none;
+  }
+}
