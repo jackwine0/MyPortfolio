@@ -33,19 +33,19 @@ const Contact = () => {
     {
       icon: <RiMailLine className="np-contact__info-icon" aria-hidden="true" />,
       label: "TELEGRAPH ADDRESS",
-      value: "me@developer.com",
+      value: "samuelakande.dev@gmail.com",
       type: "email"
     },
     {
       icon: <RiPhoneLine className="np-contact__info-icon" aria-hidden="true" />,
       label: "TELEPHONE",
-      value: "+1 (555) 123-4567",
+      value: "+234 814 993 4261",
       type: "tel"
     },
     {
       icon: <RiMapPinLine className="np-contact__info-icon" aria-hidden="true" />,
       label: "LOCATION",
-      value: "San Francisco, CA",
+      value: "Lagos, NG",
       type: "text"
     }
   ];

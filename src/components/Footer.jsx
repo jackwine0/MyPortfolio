@@ -41,7 +41,7 @@ const Footer = () => {
     {
       icon: <RiMailLine className="np-footer__social-icon" aria-hidden="true" />,
       label: "Email",
-      url: "mailto:youremail@example.com"
+      url: "mailto:samuelakande.dev@gmail.com"
     }
   ];
 
@@ -117,11 +117,11 @@ const Footer = () => {
             <address className="np-footer__address">
               <p className="np-footer__contact-item">
                 <span className="np-footer__contact-label">Telegraph:</span> 
-                <a href="mailto:youremail@example.com">youremail@example.com</a>
+                <a href="mailto:samuelakande.dev@gmail.com">samuelakande.dev@gmail.com</a>
               </p>
               <p className="np-footer__contact-item">
                 <span className="np-footer__contact-label">Telephone:</span> 
-                <a href="tel:+1234567890">+123 456 7890</a>
+                <a href="tel:+234 814 993 4261">+234 814 993 4261</a>
               </p>
               <p className="np-footer__contact-item">
                 <span className="np-footer__contact-label">Dispatch:</span> Lagos, Nigeria
